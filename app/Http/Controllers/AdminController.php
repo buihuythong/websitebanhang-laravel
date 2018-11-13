@@ -56,6 +56,63 @@ class AdminController extends Controller
     }
 
     public function deleteUser($id){
-        echo $id;
+        $user = new User;
+        $result =  $user->deleteUser($id);
+
+        if($result == true){
+            return redirect()->route('getListUser');
+        }
     }
+
+    public function editUser($id){
+        $user = new User;
+        $data = $user->getOneUser($id);
+
+
+        return view('admin/users/edit',compact('data'));
+    }
+
+    public function setEditUser(Request $rq){
+       $id = $rq->id;
+       $name = $rq->name;
+       $email = $rq->email;
+       $level = $rq->level;
+       $active = $rq->active;
+
+       $user = User::find($id);
+       $user->name = $name;
+       $user->email = $email;
+       $user->level = $level;
+       $user->active = $active;
+       if($rq->hasFile('avatar')){
+
+            $images = $request->avatar;
+
+            $fileImages = time(). $images->getClientOriginalName();
+
+            $avatar = $images->move('images',$fileImages);
+
+            $user->avatar = $avatar;
+       }
+
+       if($user->save()){
+        return redirect()->route('getListUser');
+       }
+    }
+
+    public function selectData(){
+        $user = new User;
+        $data = $user->getUser($_GET['t']);
+       return view('admin/users/data',compact('data'));
+    }
+
+    public function searchData(){
+        $user = new User;
+        $data = $user->research($_GET['t']);
+       return view('admin/users/data',compact('data'));
+
+
+    }
+
+   
 }
