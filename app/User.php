@@ -27,4 +27,29 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function addUser($name, $email, $password, $avatar, $level, $active){
+        $this->name = $name;
+        $this->email = $email;
+        $this->password = $password;
+        $this->avatar = $avatar;
+        $this->level = $level;
+        $this->active = $active;
+        if($this->save()){
+            return true;
+        }
+    }
+
+    public function getAllUser(){
+        $data = User::all()->toArray();
+        return $data;
+    }
+
+    public function deleteUser($id){
+        $user = User::find($id);
+        if($user->delete()){
+            return true;
+        }
+    }
+
 }
