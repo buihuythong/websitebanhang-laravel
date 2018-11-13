@@ -15,7 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'],function(){
+Route::get('login.html','LoginController@getLogin')->name('getLogin');
+Route::post('login.html','LoginController@setLogin')->name('setLogin');
+
+Route::get('logout.html','LoginController@logout')->name('logout');
+
+Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 
 	Route::get('/index.html','AdminController@index')->name('index');
 	

@@ -110,8 +110,8 @@
     <section class="content-header">
         <span> <strong style="color:white"><i class="fa fa-arrow-right" aria-hidden="true" style="color:red;margin-right: 10px"></i>Administration Center</strong></span>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="{!! route('logout') !!}"><i class="fa fa-dashboard"></i> Đăng xuất</a></li>
+        
       </ol>
     </section>
 
