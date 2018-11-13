@@ -27,4 +27,12 @@ Route::group(['prefix' => 'admin'],function(){
 
 	Route::get('users/delete/{id?}','AdminController@deleteUser')->name('deleteUser');
 
+	Route::get('users/edit/{id?}','AdminController@editUser')->name('editUser');
+
+	Route::post('users/edit','AdminController@setEditUser')->name('setEditUser');
+
+	Route::get('users/selectData','AdminController@selectData')->name('selectData');
+
+	Route::get('users/searchData','AdminController@searchData')->name('searchData');
+
 });

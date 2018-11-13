@@ -41,7 +41,7 @@ class User extends Authenticatable
     }
 
     public function getAllUser(){
-        $data = User::all()->toArray();
+        $data = User::paginate(10);
         return $data;
     }
 
@@ -50,6 +50,21 @@ class User extends Authenticatable
         if($user->delete()){
             return true;
         }
+    }
+
+    public function getOneUser($id){
+        $data = User::find($id)->toArray();
+        return $data;
+    }
+
+    public function getUser($total){
+        $data = User::paginate($total);
+        return $data;
+    }
+
+    public function research($sr){
+        $data = User::where('name','like','%'.$sr.'%')->get();
+        return $data;
     }
 
 }
