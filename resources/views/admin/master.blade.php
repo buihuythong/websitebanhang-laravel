@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="{!!asset('admin/style.css')!!}">
   <link rel="stylesheet" href="{!!asset('fontawesome/css/font-awesome.min.css')!!}">
 
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -80,13 +81,13 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Thêm </span>
+            <i class="fa fa-edit"></i> <span>Quản lý side </span>
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+            <li><a href="{!! route('getAddSlide') !!}"><i class="fa fa-circle-o"></i> Thêm slide </a></li>
+            <li><a href="{!! route('getListSlide') !!}"><i class="fa fa-circle-o"></i> Danh sách slide</a></li>
+            
           </ul>
         </li>
         <li class="treeview">
@@ -148,5 +149,6 @@
 <script src="{!!asset('admin/dist/js/pages/dashboard2.js')!!}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{!!asset('admin/dist/js/demo.js')!!}"></script>
+<script src="{!!asset('ckeditor/ckeditor.js')!!}"></script>
 </body>
 </html>

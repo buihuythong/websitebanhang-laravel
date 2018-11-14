@@ -40,4 +40,12 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 
 	Route::get('users/searchData','AdminController@searchData')->name('searchData');
 
+	Route::get('slides/add.html','AdminController@getAddSlide')->name('getAddSlide');
+
+	Route::post('slides/add.html','AdminController@setAddSlide')->name('setAddSlide');
+
+	Route::get('slides/list.html','AdminController@getListSlide')->name('getListSlide');
+
+	Route::get('slides/delete/{id?}','AdminController@deleteSlide')->name('deleteSlide');
+
 });

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Slide;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\SlideRequest;
 
 class AdminController extends Controller
 {
@@ -112,6 +114,42 @@ class AdminController extends Controller
        return view('admin/users/data',compact('data'));
 
 
+    }
+
+    public function getAddSlide(){
+      return view('admin/slide/add');
+    }
+
+    public function setAddSlide(SlideRequest $request){
+      $name = $request->name;
+      $link = $request->link;
+      $image = $request->image;
+      $descripton = $request->descripton;
+      $display = $request->display;
+
+      $display = ($display == 'on') ? '1' : '0';
+      if($request->hasFile('image')){
+
+        $avatar = time().$image->getClientOriginalName();
+        $avatar = $image->move('images',$avatar);
+      }
+
+      $slide = new Slide;
+     echo  $slide->add($name, $link, $avatar, $descripton, $display);
+
+    }
+
+    public function getListSlide(){
+      $slide = new Slide;
+      $data = $slide->getAllSlide();
+      return view('admin/slide/index',compact('data'));
+    }
+
+    public function deleteSlide($id){
+      $slide = new Slide;
+      if($slide->deleteSlide($id)){
+        return redirect()->route('getListSlide');
+      }
     }
 
    
