@@ -27,11 +27,11 @@
 					 ?>
 				<tr>
 					<td>Họ và tên</td>
-					<td><input class="form-control" type="text" name="name" placeholder="Nhập họ và tên"></td>
+					<td><input class="form-control" type="text" name="name" placeholder="Nhập họ và tên" autocomplete="true"></td>
 				</tr>
 				<tr>
 					<td>Thư Điện Tử</td>
-					<td><input class="form-control" type="text" name="email" placeholder="Nhập hòm thư điện tử"></td>
+					<td><input class="form-control" type="text" name="email" placeholder="Nhập hòm thư điện tử" autocomplete="true"></td>
 				</tr>
 				<tr>
 					<td>Mật khẩu</td>
