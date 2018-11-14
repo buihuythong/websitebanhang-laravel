@@ -28,3 +28,12 @@ Route::group(['prefix' => 'admin'],function(){
 	Route::get('users/delete/{id?}','AdminController@deleteUser')->name('deleteUser');
 
 });
+Route::get('index.html','PageController@getindex');
+
+Route::get('list.html','PageController@getlist');
+
+Route::get('quick-view.html','PageController@getquickview');
+
+Route::get('product-detail.html','PageController@productdetail');
+
+Route::get('contact-us.html','PageController@contact'); 
