@@ -48,4 +48,12 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 
 	Route::get('slides/delete/{id?}','AdminController@deleteSlide')->name('deleteSlide');
 
+	Route::get('slides/edit/{id?}','AdminController@getEditSlide')->name('getEditSlide');
+
+	Route::post('slides/edit/{id?}','AdminController@setEditSlide')->name('setEditSlide');
+
+	Route::get('slides/selectSlide','AdminController@selectSlide')->name('selectSlide');
+
+	Route::get('slides/searchSlide','AdminController@searchSlide')->name('searchSlide');
+
 });
