@@ -54,8 +54,8 @@
 					<td>{!! $v['descripton'] !!}</td>
 					<td><small class="label label-success">{!! $flag1 !!}</small></td>
 					<td>
-						<a href="{!! route('deleteSlide') !!}<?php echo '/'. $v['id'] ?>"><img src="{!! asset('images/delete.gif')!!}" alt="" style="margin-right: 10px;cursor: pointer" title="Xóa thành viên" onclick="return deleteUser();"></a>
-						<a href="{!! route('editUser') !!}<?php echo '/'. $v['id'] ?>"><img src="{!! asset('images/edit.gif')!!}" alt="" style="cursor: pointer" title="Sửa thành viên"></a>
+						<a href="{!! route('deleteSlide') !!}<?php echo '/'. $v['id'] ?>"><img src="{!! asset('images/delete.gif')!!}" alt="" style="margin-right: 10px;cursor: pointer" title="Xóa thành viên" onclick="return deleteSlide();"></a>
+						<a href="{!! route('getEditSlide') !!}<?php echo '/'. $v['id'] ?>" onclick="return editSlide();"><img src="{!! asset('images/edit.gif')!!}" alt="" style="cursor: pointer" title="Sửa thành viên"></a>
 					</td>
 				</tr>
 				@endforeach
@@ -69,32 +69,39 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 	<script>
 		
-		function deleteUser(){
-			let cf = window.confirm("Bạn chắc chắn muốn xóa thành viên này ? ");
+		function deleteSlide(){
+			let cf = window.confirm("Bạn chắc chắn muốn xóa slide này ? ");
+			return (cf == true) ? true : false;
+		}
+
+		function editSlide(){
+			let cf = window.confirm("Bạn chắc chắn muốn sửa slide này ? ");
 			return (cf == true) ? true : false;
 		}
 
 		function changeData(total){
 			console.log(total);
 			$.ajax({
-				url : "selectData",
+				url : "selectSlide",
 				type : 'GET',
 				dataType : 'html',
 				data : {t : total},
 				success : function(result){
 					document.querySelector('.nd').innerHTML = result;
+					//console.log(result);
 				}
 			});
 		}
 
 		function search(data){
 			$.ajax({
-				url : "searchData",
+				url : "searchSlide",
 				type : 'GET',
 				dataType : 'html',
 				data : {t : data},
 				success : function(result){
 					document.querySelector('.nd').innerHTML = result;
+					//console.log(result);
 					
 				}
 			});

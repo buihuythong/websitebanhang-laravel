@@ -81,7 +81,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Quản lý side </span>
+            <i class="fa fa-edit"></i> <span>Quản lý slide </span>
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
@@ -92,7 +92,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-table"></i>Quản trị <span></span>
+            <i class="fa fa-table"></i>Quản lý danh mục <span></span>
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">

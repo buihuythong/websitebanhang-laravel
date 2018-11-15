@@ -127,7 +127,7 @@ class AdminController extends Controller
       $descripton = $request->descripton;
       $display = $request->display;
 
-      $display = ($display == 'on') ? '1' : '0';
+      $display = ($display == 1) ? '1' : '0';
       if($request->hasFile('image')){
 
         $avatar = time().$image->getClientOriginalName();
@@ -135,7 +135,10 @@ class AdminController extends Controller
       }
 
       $slide = new Slide;
-     echo  $slide->add($name, $link, $avatar, $descripton, $display);
+      $result =  $slide->add($name, $link, $avatar, $descripton, $display);
+      if($result == 1){
+        return redirect()->route('getListSlide');
+      }
 
     }
 
@@ -150,6 +153,52 @@ class AdminController extends Controller
       if($slide->deleteSlide($id)){
         return redirect()->route('getListSlide');
       }
+    }
+
+    public function getEditSlide($id){
+      $slide = new Slide;
+      $data = $slide->getOneSlide($id);
+      return view('admin/slide/edit',compact('data'));
+    }
+
+    public function setEditSlide(Request $request){
+      $id = $request->id;
+      $name = $request->name;
+      $link = $request->link;
+      
+      $display = $request->display;
+      $descripton = $request->descripton;
+      $image = '';
+      if($request->hasFile('image')){
+        $image = $request->image;
+        $nameimage = time().$image->getClientOriginalName();
+
+        $image = $image->move('images',$nameimage);
+      }
+
+       $display = ($display == 1) ? '1' : '0';
+
+      $slide = new Slide;
+      $result = $slide->editSlide($id, $name, $link, $image, $display, $descripton);
+
+      if($result == true){
+        return redirect()->route('getListSlide');
+      }
+    }
+
+    public function selectSlide(){
+      $slide = new Slide;
+      $data = $slide->getLimitSlide($_GET['t']);
+
+      return view('admin/slide/data',compact('data'));
+
+      //return $data;
+    }
+
+    public function searchSlide(){
+      $slide = new Slide;
+      $data = $slide->searchSlide($_GET['t']);
+      return view('admin/slide/data',compact('data'));
     }
 
    
