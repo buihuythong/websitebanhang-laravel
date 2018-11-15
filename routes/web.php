@@ -56,8 +56,4 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 
 	Route::get('slides/searchSlide','AdminController@searchSlide')->name('searchSlide');
 
-	Route::get('hello',function(){
-		echo "hello world";
-	})
-
 });
