@@ -96,8 +96,8 @@
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+            <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Thêm danh mục</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Danh sách danh mục</a></li>
           </ul>
         </li>
       </ul>
