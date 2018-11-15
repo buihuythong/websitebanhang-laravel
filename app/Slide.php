@@ -32,4 +32,35 @@ class Slide extends Model
             return true;
         }
     }
+
+    public function getOneSlide($id){
+        $slide = Slide::find($id)->toArray();
+        return $slide;
+    }
+    public function editSlide($id, $name, $link, $image='', $display, $descripton){
+        $slide = Slide::find($id);
+        $slide->name = $name;
+        $slide->link = $link;
+
+        if($image != ''){
+            $slide->image = $image;
+        }
+
+        $slide->display = $display;
+        $slide->descripton = $descripton;
+
+        if($slide->save()){
+            return true;
+        }
+    }
+
+    public function getLimitSlide($total){
+        $data = Slide::paginate($total);
+        return $data;
+    }
+
+    public function searchSlide($dk){
+        $slide = Slide::where('name','like','%'.$dk.'%')->get();
+        return $slide;
+    }
 }
