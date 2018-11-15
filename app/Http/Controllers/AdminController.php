@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Slide;
+use App\Category;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\SlideRequest;
-
+use App\Http\Requests\CategoryRequest;
 class AdminController extends Controller
 {
     
@@ -199,6 +200,77 @@ class AdminController extends Controller
       $slide = new Slide;
       $data = $slide->searchSlide($_GET['t']);
       return view('admin/slide/data',compact('data'));
+    }
+
+    public function getAddCategory(){
+      return view('admin/category/add');
+    }
+
+    public function setAddCategory(CategoryRequest $request){
+      $name = $request->name;
+      $description = $request->description;
+      $image = '';
+      if($request->hasFile('image')){
+        $image = $request->image;
+        $nameImage = time().$image->getClientOriginalName();
+        $image = $image->move('images',$nameImage);
+      }
+
+      $category = new Category;
+      $result = $category->addCategory($name, $description, $image);
+      if($result == true){
+        return redirect()->route('getListCategory');
+      }
+
+
+    }
+
+    public function getListCategory(){
+      $category = new Category;
+      $data = $category->getAllCategory();
+      return view('admin/category/index',compact('data'));
+    }
+
+    public function deleteCategory($id){
+      $category = new Category;
+      if($category->deleteCategory($id)){
+        return redirect()->route('getListCategory');
+      }
+    }
+
+    public function getEditCategory($id){
+      $category = new Category;
+      $data = $category->getOneCategory($id);
+      return view('admin/category/edit',compact('data'));
+    }
+
+    public function setEditCategory(Request $request){
+      $id = $request->id;
+      $name = $request->name;
+      $description = $request->description;
+      $image = '';
+      if($request->hasFile('image')){
+        $image = $request->image;
+        $nameImage = time().$image->getClientOriginalName();
+        $image = $image->move('images',$nameImage);
+      }
+
+      $category = new Category;
+      if($category->editCategory($id, $name, $image, $description)){
+        return redirect()->route('getListCategory');
+      }
+    }
+
+    public function selectCategory(){
+      $category = new Category;
+      $data = $category->getLimitCategory($_GET['t']);
+      return view('admin/category/data',compact('data'));
+    }
+
+    public function searchCategory(){
+      $category = new Category;
+      $data = $category->searchCategory($_GET['t']);
+      return view('admin/category/data',compact('data'));
     }
 
    
