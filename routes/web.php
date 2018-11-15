@@ -56,4 +56,20 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 
 	Route::get('slides/searchSlide','AdminController@searchSlide')->name('searchSlide');
 
+	Route::get('category/add.html','AdminController@getAddCategory')->name('getAddCategory');
+
+	Route::post('category/add.html','AdminController@setAddCategory')->name('setAddCategory');
+
+	Route::get('category/list.html','AdminController@getListCategory')->name('getListCategory');
+
+	Route::get('category/delete/{id?}','AdminController@deleteCategory')->name('deleteCategory');
+
+	Route::get('category/edit/{id?}','AdminController@getEditCategory')->name('getEditCategory');
+
+	Route::post('category/edit/{id?}','AdminController@setEditCategory')->name('setEditCategory');
+
+	Route::get('category/selectCategory','AdminController@selectCategory')->name('selectCategory');
+
+	Route::get('category/searchCategory','AdminController@searchCategory')->name('searchCategory');
+
 });
