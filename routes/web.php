@@ -49,3 +49,17 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 	Route::get('slides/delete/{id?}','AdminController@deleteSlide')->name('deleteSlide');
 
 });
+
+
+
+Route::get('index.html','PageController@getindex');
+
+Route::get('list.html','PageController@getlist');
+
+Route::get('checkout.html','PageController@checkout');
+
+Route::get('product-detail.html','PageController@productdetail');
+
+Route::get('quick-view.html/{id}','PageController@quickview')->name('quickview');
+
+Route::get('addtoCart/{id}','PageController@addtoCart')->name('addtoCart');
