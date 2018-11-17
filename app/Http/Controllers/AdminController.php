@@ -61,6 +61,7 @@ class AdminController extends Controller
     }
 
     public function deleteUser($id){
+
         $user = new User;
         $result =  $user->deleteUser($id);
 
@@ -382,4 +383,11 @@ class AdminController extends Controller
     }
 
    
+
+	}
+	public function getindex()
+	{
+		return view('users.index');
+	}
+
 }

@@ -97,3 +97,12 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 	Route::get('product/delete/{id?}','AdminController@deleteProduct')->name('deleteProduct');
 
 });
+Route::get('index.html','PageController@getindex');
+
+Route::get('list.html','PageController@getlist');
+
+Route::get('quick-view.html','PageController@getquickview');
+
+Route::get('product-detail.html','PageController@productdetail');
+
+Route::get('contact-us.html','PageController@contact'); 
