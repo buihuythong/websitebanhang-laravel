@@ -72,4 +72,28 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 
 	Route::get('category/searchCategory','AdminController@searchCategory')->name('searchCategory');
 
+	Route::get('type/add.html','AdminController@getAddType')->name('getAddType');
+
+	Route::post('type/add.html','AdminController@setAddType')->name('setAddType');
+
+	Route::get('type/list.html','AdminController@getListType')->name('getListType');
+
+	Route::get('type/delete/{id?}','AdminController@deleteType')->name('deleteType');
+
+	Route::get('type/edit/{id?}','AdminController@editType')->name('editType');
+
+	Route::post('type/edit','AdminController@setEditType')->name('setEditType');
+
+	Route::get('type/selectType','AdminController@selectType')->name('selectType');
+
+	Route::get('type/searchType','AdminController@searchType')->name('searchType');
+
+	Route::get('product/list.html','AdminController@listProduct')->name('listProduct');
+
+	Route::get('product/searchProduct','AdminController@searchProduct')->name('searchProduct');
+
+	Route::get('product/selectProduct','AdminController@selectProduct')->name('selectProduct');
+
+	Route::get('product/delete/{id?}','AdminController@deleteProduct')->name('deleteProduct');
+
 });

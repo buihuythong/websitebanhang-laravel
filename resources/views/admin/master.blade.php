@@ -100,6 +100,26 @@
             <li><a href="{!! route('getListCategory') !!}"><i class="fa fa-circle-o"></i> Danh sách danh mục</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i>Quản lý thương hiệu  <span></span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{!! route('getAddType') !!}"><i class="fa fa-circle-o"></i> Thêm thương hiệu</a></li>
+            <li><a href="{!! route('getListType') !!}"><i class="fa fa-circle-o"></i> Danh sách thương hiệu</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i>Quản lý sản phẩm  <span></span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{!! route('getAddType') !!}"><i class="fa fa-circle-o"></i> Thêm sản phẩm</a></li>
+            <li><a href="{!! route('listProduct') !!}"><i class="fa fa-circle-o"></i> Danh sách sản phẩm</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

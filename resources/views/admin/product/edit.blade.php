@@ -4,9 +4,10 @@
 		<div class="col-sm-10">
 			<table class="table table-bordered">
 				<tr>
-					<th colspan="2" class="tieude">THÊM THÀNH VIÊN MỚI</th>
+					<th colspan="2" class="tieude">SỬA THÔNG TIN THÀNH VIÊN</th>
 				</tr>
-				<form method="post" action="{!! route('setAddUser') !!}" enctype="multipart/form-data">
+				<form method="post" action="{!! route('setEditUser') !!}" enctype="multipart/form-data">
+					<input class="form-control" type="hidden" name="id" value="{!!$data['id']!!}">
 					@if ($errors->any())
 					    <div class="alert alert-danger">
 					        <ul style="list-style: none;">
@@ -27,30 +28,35 @@
 					 ?>
 				<tr>
 					<td>Họ và tên</td>
-					<td><input class="form-control" type="text" name="name" placeholder="Nhập họ và tên" autocomplete="true" required=""></td>
+					<td><input class="form-control" type="text" name="name" value="{!!$data['name']!!}" autocomplete="true"></td>
 				</tr>
 				<tr>
 					<td>Thư Điện Tử</td>
-					<td><input class="form-control" type="text" name="email" placeholder="Nhập hòm thư điện tử" autocomplete="true"></td>
-				</tr>
-				<tr>
-					<td>Mật khẩu</td>
-					<td><input class="form-control" type="password" name="password" placeholder="Nhập mật khẩu"></td>
-				</tr>
-				<tr>
-					<td>Nhập lại mật khẩu</td>
-					<td><input class="form-control" type="password" name="repassword" placeholder="Nhập lại mật khẩu"></td>
+					<td><input class="form-control" type="text" name="email" value="{!! $data['email'] !!}" autocomplete="true"></td>
 				</tr>
 				<tr>
 					<td>Ảnh đại diện</td>
-					<td><input class="form-control" type="file" name="avatar" placeholder="Nhập lại mật khẩu"></td>
+					<td>
+						<input class="form-control" type="file" name="avatar" placeholder="Nhập lại mật khẩu">
+
+						<img src="{!! asset('') !!}<?php echo $data['avatar'] ?>" alt="" width="100px" height="100px" style="margin-top: 10px">
+					</td>
 				</tr>
 				<tr>
 					<td>Quyền hạn</td>
+					<?php
+						$khachhang = '';
+						$quantri = '';
+						if($data['level'] == 1){
+							$khachhang = 'checked';
+						}else{
+							$quantri = 'checked';
+						}
+					 ?>
 					<td>
-						<input type="radio" value="0" name="level"> Quản trị viên
+						<input type="radio" value="0" name="level" {!! $quantri !!}> Quản trị viên
 						<br>
-						<input type="radio" value="1" name="level" checked=""> Khách hàng
+						<input type="radio" value="1" name="level" {!! $khachhang !!}> Khách hàng
 					</td>
 				</tr>
 				<tr>
@@ -64,7 +70,7 @@
 				<tr>
 					<td></td>
 					<td>
-						<input type="submit" class="btn btn-success" value="Thêm thành viên">
+						<input type="submit" class="btn btn-success" value="Sửa thông tin thành viên">
 						<input type="reset" class="btn btn-danger" value="Nhập lại">
 					</td>
 				</tr>

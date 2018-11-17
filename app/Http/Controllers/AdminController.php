@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Slide;
+use App\Type;
 use App\Category;
+use App\Product;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\SlideRequest;
 use App\Http\Requests\CategoryRequest;
@@ -271,6 +273,112 @@ class AdminController extends Controller
       $category = new Category;
       $data = $category->searchCategory($_GET['t']);
       return view('admin/category/data',compact('data'));
+    }
+
+
+    public function getAddType(){
+      $category = new Category;
+      $data = $category->getAllCategory();
+      return view('admin/type/add',compact('data'));
+    }
+
+    public function setAddType(Request $request){
+      $name = $request->name;
+      $cat_id = $request->cat_id;
+      $type = new Type;
+      $result = $type->addType($name, $cat_id);
+      if($result == true){
+        return redirect()->route('getListType');
+      }
+    }
+
+    public function getListType(){
+      $type = new Type;
+      $category = new Category;
+      $cate = $category->getAllCategory();
+      $data = $type->getAllType();
+      return view('admin/type/index',compact('data','cate'));
+    }
+
+    public function deleteType($id){
+      $type = new Type;
+      if($type->deleteType($id)){
+        return redirect()->route('getListType');
+      }
+    }
+
+
+    public function editType($id)
+    {
+      $type = new Type;
+      $category = new Category;
+      $cate = $category->getAllCategory();
+      $data = $type->getOneType($id);
+      return view('admin/type/edit',compact('data','cate'));
+    }
+
+    public function setEditType(Request $request){
+      echo $id = $request->id;
+      echo $name = $request->name;
+      echo $cat_id = $request->cat_id;
+
+      $type = new Type;
+      $result = $type->editType($id, $name, $cat_id);
+      if($result == true){
+        return redirect()->route('getListType');
+      }
+    }
+
+    public function selectType(){
+      $type = new Type;
+      $category = new Category;
+      $cate = $category->getAllCategory();
+      $data = $type->getLimitType($_GET['t']);
+      return view('admin/type/data',compact('data','cate'));
+    }
+
+    public function searchType(){
+       $type = new Type;
+        $category = new Category;
+        $cate = $category->getAllCategory();
+        $data = $type->searchType($_GET['t']);
+        return view('admin/type/data',compact('data','cate'));
+    }
+
+    public function listProduct(){
+      $product = new Product;
+      $type = new Type;
+      $category = new Category;
+      $dataCategory = $category->getAllCategory();
+      $dataType = $type->getAllType();
+      $data = $product->getAllProduct();
+      return view('admin/product/index',compact('data','dataType','dataCategory'));
+    }
+    public function searchProduct(){
+      $product = new Product;
+      $type = new Type;
+      $category = new Category;
+      $dataCategory = $category->getAllCategory();
+      $dataType = $type->getAllType();
+      $data = $product->searchProduct($_GET['t']);
+      return view('admin/product/data',compact('data','dataCategory','dataType'));
+    }
+
+    public function selectProduct(){
+      $product = new Product;
+      $type = new Type;
+      $category = new Category;
+      $dataCategory = $category->getAllCategory();
+      $dataType = $type->getAllType();
+      $data = $product->selectProduct($_GET['t']);
+      return view('admin/product/data',compact('data','dataType','dataCategory'));
+    }
+
+    public function deleteProduct($id){
+      $product = new Product;
+      if($product->deleteProduct($id)){
+        return redirect()->route('listProduct');
+      }
     }
 
    
