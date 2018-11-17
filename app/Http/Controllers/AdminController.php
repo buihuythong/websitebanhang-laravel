@@ -382,12 +382,47 @@ class AdminController extends Controller
       }
     }
 
-   
+    public function getAddProduct(){
+      $category = new Category;
+      $dataCate = $category->getAllCategory();
+      return view('admin/product/add',compact('dataCate'));
+    }
 
-	}
-	public function getindex()
-	{
-		return view('users.index');
-	}
+    public function selectTypeByCate(){
+      $type = Type::where('cat_id',$_GET['t'])->get()->toArray();
+     echo '<option value="">----Thương hiệu sản phẩm----</option>';
+     foreach($type as $v){
+       echo '<option value="'.$v['id'].'">'.$v['name'].'</option>';
+     }
+    
+     
+    }
+
+    public function setAddProduct(Request $request){
+      $name = $request->name;
+      $old_price = $request->old_price;
+      $new_price = $request->new_price;
+      $title = $request->title;
+      $cat_id = $request->cat_id;
+      $type_id = $request->type_id;
+      $warranty = $request->warranty;
+      $description = $request->description;
+      $status = $request->status;
+      $hot = $request->hot;
+      $image = '';
+      if($request->hasFile('image')){
+        $image = $request->image;
+        $imageProduct = time() . $image->getClientOriginalName();
+        $image = $image->move('images',$imageProduct);
+
+      }
+
+      $product = new Product;
+      $result = $product->addProduct($name, $old_price, $new_price, $title, $cat_id , $type_id,$warranty, $description, $status, $image, $hot);
+
+      if($result == true){
+        return redirect()->route('listProduct');
+      }
+    }
 
 }

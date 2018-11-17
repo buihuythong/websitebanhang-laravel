@@ -12,7 +12,7 @@
 				<tr>
 					<td>{!! $stt; !!}</td>
 					<td>{!! $v['name'] !!}</td>
-					<td><img src="{!! asset('images') !!}<?php echo '/' . $v['image'] ?>" alt="" width="150px" height="100px" ></td>
+					<td><img src="{!! asset('') !!}<?php echo $v['image'] ?>" alt="" width="120px" height="150px" ></td>
 					<td>{!! number_format($v['old_price']).' VNĐ' !!}</td>
 					<td>{!! number_format($v['new_price']). ' VNĐ' !!}</td>
 					<td>{!! $v['title'] !!}</td>
