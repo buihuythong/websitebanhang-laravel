@@ -1,6 +1,11 @@
 @extends('users.master')
 @section('content')
+<<<<<<< HEAD
 <section class="main-container col1-layout">
+=======
+
+  <section class="main-container col1-layout">
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
     <div class="main container">
       <div class="col-main">
         <div class="row">
@@ -8,6 +13,7 @@
             <div class="product-essential">
               <form action="#" method="post" id="product_addtocart_form">
                 <div class="product-img-box col-lg-6 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                   <ul class="moreview" id="moreview">
                     <li class="moreview_thumb thumb_1"> <img class="moreview_thumb_image" src="users/digital/products-images/product1.jpg"> <img class="moreview_source_image" src="products-images/product2.jpg" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img style="position: absolute;" class="zoomImg" src="products-images/product3.jpg"></li>
                     <li class="moreview_thumb thumb_2 moreview_thumb_active"> <img class="moreview_thumb_image" src="users/digital/products-images/product4.jpg"> <img class="moreview_source_image" src="users/digital/products-images/product4.jpg" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img style="position: absolute;" class="zoomImg" src="images/product4.html"></li>
@@ -22,6 +28,12 @@
                 
                 <!-- end: more-images -->
                 
+=======
+                      <img style="width: 500px;height: 500px" class="zoomImg" src="users/digital/products-images/product3.jpg"></li>
+                  
+                </div>
+                <!-- end: more-images -->
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                 <div class="product-shop col-lg-6 col-sm-6 col-xs-12">
                   <div class="product-next-prev"> <a class="product-next" href="#"><span></span></a> <a class="product-prev" href="#"><span></span></a> </div>
                   <div class="product-name">
@@ -65,7 +77,11 @@
                       <p class="email-friend"><a href="#" class=""><span>Email to Friend</span></a></p>
                     </div>
                   </div>
+<<<<<<< HEAD
                   <div class="custom-box"><img alt="banner" src="images/cus-img.png"></div>
+=======
+                  <div class="custom-box"><img alt="banner" src="users/digital/images/cus-img.png"></div>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                 </div>
               </form>
             </div>
@@ -348,7 +364,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img src="products-images/product3.jpg" class="img-responsive" alt="a" /> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img src="users/digital/products-images/product3.jpg" class="img-responsive" alt="a" /> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -391,7 +411,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="new-label new-top-right">New</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img src="products-images/product2.jpg" class="img-responsive" alt="a" /> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img src="users/digital/products-images/product2.jpg" class="img-responsive" alt="a" /> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -431,7 +455,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product4.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product4.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -473,7 +501,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product1.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product1.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -518,7 +550,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product6.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product6.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -563,7 +599,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="new-label new-top-right">New</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product7.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product7.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -605,7 +645,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product8.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product8.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -647,7 +691,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product9.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product9.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -704,7 +752,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img src="products-images/product13.jpg" class="img-responsive" alt="a" /> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img src="users/digital/products-images/product13.jpg" class="img-responsive" alt="a" /> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -747,7 +799,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="new-label new-top-right">New</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img src="products-images/product14.jpg" class="img-responsive" alt="a" /> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img src="users/digital/products-images/product14.jpg" class="img-responsive" alt="a" /> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -787,7 +843,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product15.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product15.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -829,7 +889,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product16.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product16.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -874,7 +938,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product17.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product17.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -919,7 +987,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="new-label new-top-right">New</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product18.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product18.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -961,7 +1033,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product19.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product19.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
@@ -1003,7 +1079,11 @@
                           <div class="item">
                             <div class="col-item">
                               <div class="sale-label sale-top-right">Sale</div>
+<<<<<<< HEAD
                               <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="products-images/product20.jpg"> </a></a>
+=======
+                              <div class="images-container"> <a class="product-image" title="Sample Product" href="product-detail.html"> <img alt="a" class="img-responsive" src="users/digital/products-images/product20.jpg"> </a></a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                                 <div class="actions">
                                   <div class="actions-inner">
                                     <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>

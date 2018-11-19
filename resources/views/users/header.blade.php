@@ -1,4 +1,8 @@
 <!-- Header -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
 <header class="header-container">
     <div class="header-top">
       <div class="container">
@@ -28,10 +32,17 @@
             <!-- Header Top Links -->
             <div class="toplinks">
               <div class="links">
+<<<<<<< HEAD
                 <div class="myaccount"><a title="My Account" href="login.html"><span class="hidden-xs">My Account</span></a></div>
                 <div class="wishlist"><a title="My Wishlist" href="wishlist.html"><span class="hidden-xs">Wishlist</span></a></div>
                 <div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a></div>
                 <div class="phone hidden-xs">1 800 123 1234</div>
+=======
+                <div class="myaccount"><a title="My Account" href="login.html"><span class="hidden-xs">My Account </span></a></div>
+                <div class="wishlist"><a title="My Wishlist" href="wishlist.html"><span class="hidden-xs">Wishlist</span></a></div>
+                <div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a></div>
+                <div class="phone hidden-xs">+84 948 147 100</div>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
               </div>
             </div>
             <!-- End Header Top Links --> 
@@ -49,6 +60,7 @@
         <div class="col-lg-7 col-sm-4 col-md-6 col-xs-12"> 
           <!-- Search-col -->
           <div class="search-box">
+<<<<<<< HEAD
             <form action="http://htmldemo.magikcommerce.com/ecommerce/inspire-html-template/digital/cat" method="POST" id="search_mini_form" name="Categories">
               <select name="category_id" class="cate-dropdown hidden-xs">
                 <option value="0">All Categories</option>
@@ -67,6 +79,16 @@
                 <option value="41">Featured</option>
               </select>
               <input type="text" placeholder="Search here..." value="" maxlength="70" class="" name="search" id="search">
+=======
+            <form action="{{ route('share') }}" method="get" id="search_mini_form" name="Categories">
+              <select name="category_id" class="cate-dropdown hidden-xs">
+                <option value="0">All Categories</option>
+                @foreach($cat as $ca)
+                <option value="41">{{$ca->name}}</option>
+                @endforeach
+              </select>
+              <input type="text" placeholder="Search here..." value="" name="search" maxlength="70" class="" name="search" id="search">
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
               <button id="submit-button" class="search-btn-bg"><span>Search</span></button>
             </form>
           </div>
@@ -76,6 +98,7 @@
         <div class="col-lg-3 col-sm-5 col-md-4 col-xs-12">
           <div class="top-cart-contain">
             <div class="mini-cart">
+<<<<<<< HEAD
               <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="shopping_cart.html"> <i class="icon-cart"></i>
                 <div class="cart-box"><span class="title">My Cart</span><span id="cart-total"> 2 </span></div>
                 </a></div>
@@ -108,6 +131,44 @@
                 </div>
               </div>
             </div>
+=======
+              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="{{ route('shopping')}}""> <i class="icon-cart"></i>
+                @if(Session::has('cart'))
+<?php 
+    $product_cart=Session('cart')->items;
+    
+ ?>         
+                <div class="cart-box" ><span class="title">My Cart</span><span id="cart-total"> {{ Session('cart')->totalQty }}</span></div>
+                </a></div>
+                
+              <div>
+                <div class="top-cart-content arrow_box">
+                  <div class="block-subtitle">Recently added item({{ Session('cart')->totalQty }})</div>
+                  <ul id="cart-sidebar" class="mini-products-list">
+                   @foreach($product_cart as $pro)
+                    <li class="item even"> <a class="product-image" href="#" title="Downloadable Product "><img alt="Downloadable Product " src="users/digital/products-images/{{$pro['item']['image'] }}" width="80"></a>
+                      <div class="detail-item">
+                        <div class="product-details"> <a href="{{ route('delCart',$pro['item']['id']) }}" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
+                          <p class="product-name"> <a href="#" title="Downloadable Product">{{ $pro['item']['name'] }}</a> </p>
+                        </div>
+                        <div class="product-details-bottom"> <span class="price">${{$pro['item']['old_price']}} * {{ $pro['qty'] }} =$ {{$pro['price']}}</span> <span class="title-desc">Qty:</span> <strong>{{$pro['qty']}}</strong> </div>
+                      </div>
+                    </li>
+                     @endforeach
+                    
+                  </ul>
+                  <div class="top-subtotal">Subtotal: <span class="price"><h4>${{Session('cart')->totalPrice}}</h4></span></div>
+                  <div class="actions">
+                    <button class="btn-checkout" type="button"><span>Checkout</span></button>
+                   <a href="{{ route('shopping') }}"> <button class="view-cart" type="button" ><span >View Cart</span></button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            @endif
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
             <div id="ajaxconfig_info" style="display:none"> <a href="#/"></a>
               <input value="" type="hidden">
               <input id="enable_module" value="1" type="hidden">
@@ -140,7 +201,11 @@
               <ul style="display:none;" class="submenu">
                 <li>
                   <ul class="topnav">
+<<<<<<< HEAD
                     <li class="level0 nav-6 level-top first parent"> <a class="level-top" href="index.html"> <span>Home</span> </a>
+=======
+                    <li class="level0 nav-6 level-top first parent"> <a class="level-top" href="index.html"> <span>Home 11</span> </a>
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                       <ul class="level0">
                         <li class="level1"><a href="http://htmldemo.magikcommerce.com/ecommerce/inspire-html-template/fashion/index.html"><span>Fashion Store</span></a> </li>
                         <li class="level1"><a href="index.html"><span>Digital Store</span></a> </li>
@@ -193,6 +258,7 @@
         <!--End mobile-menu --> 
         <a class="logo-small" title="Magento Commerce" href="index.html"><img alt="Magento Commerce" src="users/digital/images/logo-small.png"></a>
         <ul id="nav" class="hidden-xs">
+<<<<<<< HEAD
           <li class="level0 parent drop-menu"><a href="index.html" class="active"><span>Home</span> </a>
             <ul class="level1">
               <li class="level1"><a href="http://htmldemo.magikcommerce.com/ecommerce/inspire-html-template/fashion/index.html"><span>Fashion Store</span></a> </li>
@@ -550,6 +616,23 @@
               </div>
             </div>
           </li>
+=======
+          @foreach($cat as $ca)
+          <li class="level0 parent drop-menu"><a href="index.html" ><span><?php echo $ca->name ?></span> </a>
+            <ul class="level1">
+              @foreach($type as $ty)
+              <?php 
+              if($ty->cat_id==$ca->id){ ?>
+              <li class="level1"><a href="{{route('list',$ty->id)}}"><span>
+              <?php echo $ty->name; ?>
+              </span></a> </li>
+              <?php } ?>
+              @endforeach
+            </ul>
+          </li>
+          @endforeach
+         
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
         </ul>
       </div>
     </div>

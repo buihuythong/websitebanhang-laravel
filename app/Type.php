@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Type extends Model
 {
+
 	public $table = 'type';
 	public $timestamps = false;
 
@@ -54,4 +55,5 @@ class Type extends Model
     	$data = Type::where('name','like','%'.$r.'%')->get();
     	return $data;
     }
+
 }

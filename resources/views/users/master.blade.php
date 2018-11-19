@@ -32,7 +32,10 @@
 <div class="page"> 
   @include('users.header')
   <!-- Slider and header service -->
+<<<<<<< HEAD
   @include('users.slide')
+=======
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
   
   <!-- end header service -->
   
