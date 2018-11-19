@@ -23,18 +23,18 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="tieude">STT</td>
-					<td class="tieude">Tên sản phẩm</td>
-					<td class="tieude">Ảnh sản phẩm</td>
-					<td class="tieude">Gía cũ</td>
-					<td class="tieude">Gía mới</td>
-					<td class="tieude">Tiêu đề</td>
-					<td class="tieude">Tình trạng</td>
-					<td class="tieude">Thời gian bảo hành</td>
-					<td class="tieude">Thương hiệu</td>
-					<td class="tieude">Danh mục</td>
-					<td class="tieude">Phổ biến</td>
-					<td class="tieude">Công cụ</td>
+					<td class="tieude text-center">STT</td>
+					<td class="tieude text-center">Tên sản phẩm</td>
+					<td class="tieude text-center">Ảnh sản phẩm</td>
+					<td class="tieude text-center">Giá cũ</td>
+					<td class="tieude text-center">Giá mới</td>
+					<td class="tieude text-center">Tiêu đề</td>
+					<td class="tieude text-center">Tình trạng</td>
+					<td class="tieude text-center">Thời gian bảo hành</td>
+					<td class="tieude text-center">Thương hiệu</td>
+					<td class="tieude text-center">Danh mục</td>
+					<td class="tieude text-center">Phổ biến</td>
+					<td class="tieude text-center">Công cụ</td>
 				</tr>
 				
 					
@@ -51,37 +51,37 @@
 
 				 ?>
 				<tr>
-					<td>{!! $stt; !!}</td>
-					<td>{!! $v['name'] !!}</td>
-					<td><img src="{!! asset('') !!}<?php echo $v['image'] ?>" alt="" width="120px" height="150px" ></td>
-					<td>{!! number_format($v['old_price']).' VNĐ' !!}</td>
-					<td>{!! number_format($v['new_price']). ' VNĐ' !!}</td>
-					<td>{!! $v['title'] !!}</td>
+					<td class="text-center">{!! $stt; !!}</td>
+					<td class="text-center">{!! $v['name'] !!}</td>
+					<td class="text-center"><img src="{!! asset('') !!}<?php echo $v['image'] ?>" alt="" width="120px" height="150px" ></td>
+					<td class="text-center">{!! number_format($v['old_price']).' VNĐ' !!}</td>
+					<td class="text-center">{!! number_format($v['new_price']). ' VNĐ' !!}</td>
+					<td class="text-center">{!! $v['title'] !!}</td>
 					@if($v['status'] == 1)
-						<td><small class="label label-success">{!! $flag !!}</small></td>
+						<td class="text-center"><small class="label label-success">{!! $flag !!}</small></td>
 					@else
-						<td><small class="label label-danger">{!! $flag !!}</small></td>
+						<td class="text-center"><small class="label label-danger">{!! $flag !!}</small></td>
 					@endif
 					<td>{!! $v['warranty'] .'T' !!}</td>
 					@foreach($dataType as $v1)
 						@if($v1['id'] == $v['type_id'])
-							<td style="color:#1a5ca6;font-weight: bold">{!! $v1['name'] !!}</td>
+							<td class="text-center" style="color:#1a5ca6;font-weight: bold">{!! $v1['name'] !!}</td>
 						@endif
 					@endforeach
 					@foreach($dataCategory as $v2)
 						@if($v2['id'] == $v['cat_id'])
-							<td style="color:#1a5ca6;font-weight: bold">{!! $v2['name'] !!}</td>
+							<td class="text-center" style="color:#1a5ca6;font-weight: bold">{!! $v2['name'] !!}</td>
 						@endif
 					@endforeach
 
 					@if($v['hot'] == 1)
-						<td><small class="label label-success">{!! 'Phổ biến' !!}</small></td>
+						<td class="text-center"><small class="label label-success">{!! 'Phổ biến' !!}</small></td>
 					@else
-						<td><small class="label label-danger">{!! 'Không' !!}</small></td>
+						<td class="text-center"><small class="label label-danger">{!! 'Không' !!}</small></td>
 					@endif
-					<td>
+					<td class="text-center">
 						<a href="{!! route('deleteProduct') !!}<?php echo '/'. $v['id'] ?>"><img src="{!! asset('images/delete.gif')!!}" alt="" style="margin-right: 10px;cursor: pointer" title="Xóa thành viên" onclick="return deleteUser();"></a>
-						<a href="{!! route('editUser') !!}<?php echo '/'. $v['id'] ?>"><img src="{!! asset('images/edit.gif')!!}" alt="" style="cursor: pointer" title="Sửa thành viên"></a>
+						<a href="{!! route('getEditProduct') !!}<?php echo '/'. $v['id'] ?>"><img src="{!! asset('images/edit.gif')!!}" alt="" style="cursor: pointer" title="Sửa thành viên"></a>
 					</td>
 				</tr>
 				@endforeach
