@@ -63,3 +63,13 @@ Route::get('product-detail.html','PageController@productdetail');
 Route::get('quick-view.html/{id}','PageController@quickview')->name('quickview');
 
 Route::get('addtoCart/{id}','PageController@addtoCart')->name('addtoCart');
+
+Route::get('delCart/{id}','PageController@delCart')->name('delCart');
+
+Route::get('compare/{id}','PageController@compare')->name('compare');
+
+Route::get('shopping-cart','PageController@shopping')->name('shopping');
+
+Route::get('clear-cart','PageController@delall')->name('delall');
+
+Route::post('checkouta','PageController@checkouta')->name('checkouta');

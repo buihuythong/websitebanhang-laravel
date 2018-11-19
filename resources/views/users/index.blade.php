@@ -37,7 +37,7 @@
                             <button type="button" onclick='window.location.href="addtoCart/{{$pr->id}}"' title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
                             <ul class="add-to-links">
                               <li><a href="wishlist.html" title="Add to Wishlist" class="link-wishlist"><span>Add to Wishlist</span></a></li>
-                              <li><a href="compare.html" title="Add to Compare" class="link-compare "><span>Add to Compare</span></a></li>
+                              <li id="abc" value="<?php echo $id ?>"><a onclick='window.location.href="compare/{{$pr->id}}"' title="Add to Compare" class="link-compare "><span>Add to Compare</span></a></li>
                             </ul>
                           </div>
                         </div>
@@ -1149,6 +1149,7 @@
       </div>
     </div>
   </section>
+
   <!-- End Featured Slider --> 
 
 @endsection

@@ -1,15 +1,5 @@
 <!-- Header -->
-@if(Session::has('cart'))
-<?php 
-    $product_cart=Session('cart')->items;
-    foreach($product_cart as $pro){
-       echo $pro['item']['name'];
-       echo $pro['item']['old_price'];
-       echo $pro['qty'];
-       echo '<br>';
-    }
- ?>
-@endif
+
 <header class="header-container">
     <div class="header-top">
       <div class="container">
@@ -63,19 +53,9 @@
             <form action="http://htmldemo.magikcommerce.com/ecommerce/inspire-html-template/digital/cat" method="POST" id="search_mini_form" name="Categories">
               <select name="category_id" class="cate-dropdown hidden-xs">
                 <option value="0">All Categories</option>
-                <option value="36">Camera</option>
-                <option value="37">Electronics</option>
-                <option value="42">&nbsp;&nbsp;&nbsp;Cell Phones</option>
-                <option value="43">&nbsp;&nbsp;&nbsp;Cameras</option>
-                <option value="44">&nbsp;&nbsp;&nbsp;Laptops</option>
-                <option value="45">&nbsp;&nbsp;&nbsp;Hard Drives</option>
-                <option value="46">&nbsp;&nbsp;&nbsp;Monitors</option>
-                <option value="47">&nbsp;&nbsp;&nbsp;Mouse</option>
-                <option value="48">&nbsp;&nbsp;&nbsp;Digital Cameras</option>
-                <option value="38">Desktops</option>
-                <option value="39">Computer Parts</option>
-                <option value="40">Televisions</option>
-                <option value="41">Featured</option>
+                @foreach($cat as $ca)
+                <option value="41">{{$ca->name}}</option>
+                @endforeach
               </select>
               <input type="text" placeholder="Search here..." value="" maxlength="70" class="" name="search" id="search">
               <button id="submit-button" class="search-btn-bg"><span>Search</span></button>
@@ -87,32 +67,42 @@
         <div class="col-lg-3 col-sm-5 col-md-4 col-xs-12">
           <div class="top-cart-contain">
             <div class="mini-cart">
-              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="shopping_cart.html"> <i class="icon-cart"></i>
-                <div class="cart-box"><span class="title">My Cart</span><span id="cart-total"> 2 </span></div>
+              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="{{ route('shopping')}}""> <i class="icon-cart"></i>
+                @if(Session::has('cart'))
+<?php 
+    $product_cart=Session('cart')->items;
+    
+ ?>         
+                <div class="cart-box" ><span class="title">My Cart</span><span id="cart-total"> {{ Session('cart')->totalQty }}</span></div>
                 </a></div>
+                
               <div>
                 <div class="top-cart-content arrow_box">
-                  <div class="block-subtitle">Recently added item(s)</div>
+                  <div class="block-subtitle">Recently added item({{ Session('cart')->totalQty }})</div>
                   <ul id="cart-sidebar" class="mini-products-list">
-                   
-                    <li class="item even"> <a class="product-image" href="#" title="Downloadable Product "><img alt="Downloadable Product " src="users/digital/products-images/product1.jpg" width="80"></a>
+                   @foreach($product_cart as $pro)
+                    <li class="item even"> <a class="product-image" href="#" title="Downloadable Product "><img alt="Downloadable Product " src="users/digital/products-images/{{$pro['item']['image'] }}" width="80"></a>
                       <div class="detail-item">
-                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
-                          <p class="product-name"> <a href="#" title="Downloadable Product"></a> </p>
+                        <div class="product-details"> <a href="{{ route('delCart',$pro['item']['id']) }}" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
+                          <p class="product-name"> <a href="#" title="Downloadable Product">{{ $pro['item']['name'] }}</a> </p>
                         </div>
-                        <div class="product-details-bottom"> <span class="price">$100.00</span> <span class="title-desc">Qty:</span> <strong>1</strong> </div>
+                        <div class="product-details-bottom"> <span class="price">${{$pro['item']['old_price']}} * {{ $pro['qty'] }} =$ {{$pro['price']}}</span> <span class="title-desc">Qty:</span> <strong>{{$pro['qty']}}</strong> </div>
                       </div>
                     </li>
+                     @endforeach
                     
                   </ul>
-                  <div class="top-subtotal">Subtotal: <span class="price">$420.00</span></div>
+                  <div class="top-subtotal">Subtotal: <span class="price"><h4>${{Session('cart')->totalPrice}}</h4></span></div>
                   <div class="actions">
                     <button class="btn-checkout" type="button"><span>Checkout</span></button>
-                    <button class="view-cart" type="button"><span>View Cart</span></button>
+                   <a href="{{ route('shopping') }}"> <button class="view-cart" type="button" ><span >View Cart</span></button>
+                    </a>
                   </div>
                 </div>
               </div>
+
             </div>
+            @endif
             <div id="ajaxconfig_info" style="display:none"> <a href="#/"></a>
               <input value="" type="hidden">
               <input id="enable_module" value="1" type="hidden">

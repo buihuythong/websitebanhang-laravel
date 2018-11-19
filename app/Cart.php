@@ -32,9 +32,9 @@ class Cart
 	//xóa 1
 	public function reduceByOne($id){
 		$this->items[$id]['qty']--;
-		$this->items[$id]['price'] -= $this->items[$id]['item']['price'];
+		$this->items[$id]['price'] -= $this->items[$id]['item']['old_price'];
 		$this->totalQty--;
-		$this->totalPrice -= $this->items[$id]['item']['price'];
+		$this->totalPrice -= $this->items[$id]['item']['old_price'];
 		if($this->items[$id]['qty']<=0){
 			unset($this->items[$id]);
 		}
