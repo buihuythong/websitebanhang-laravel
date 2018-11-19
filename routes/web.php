@@ -107,12 +107,41 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 
 
 });
+
+
+
+
+
 Route::get('index.html','PageController@getindex');
 
 Route::get('list.html','PageController@getlist');
+
 
 Route::get('quick-view.html','PageController@getquickview');
 
 Route::get('product-detail.html','PageController@productdetail');
 
 Route::get('contact-us.html','PageController@contact'); 
+
+Route::get('checkout.html','PageController@checkout');
+
+Route::get('product-detail.html','PageController@productdetail');
+
+Route::get('quick-view.html/{id}','PageController@quickview')->name('quickview');
+
+Route::get('addtoCart/{id}','PageController@addtoCart')->name('addtoCart');
+
+Route::get('delCart/{id}','PageController@delCart')->name('delCart');
+
+Route::get('compare/{id}','PageController@compare')->name('compare');
+
+Route::get('shopping-cart','PageController@shopping')->name('shopping');
+
+Route::get('clear-cart','PageController@delall')->name('delall');
+
+Route::post('checkouta','PageController@checkouta')->name('checkouta');
+
+Route::get('share','PageController@share')->name('share');
+
+Route::get('list/{id}','PageController@list')->name('list');
+

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+
 	public $table = 'category';
 	public $timestamps = false;
 
@@ -57,4 +58,5 @@ class Category extends Model
     	$data = Category::where('name','like','%'.$r.'%')->get();
     	return $data;
     }
+
 }

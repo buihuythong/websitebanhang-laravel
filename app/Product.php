@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+
     public $table = 'product';
     public $timestamps = false;
 
@@ -48,6 +49,7 @@ class Product extends Model
         }
     }
 
+
     public function getOneProduct($id)
     {
         $data = Product::find($id)->toArray();
@@ -55,4 +57,5 @@ class Product extends Model
     }
 
     
+
 }

@@ -1,7 +1,11 @@
 @extends('users.master')
 @section('content')
+<<<<<<< HEAD
 <!-- breadcrumbs -->
 <div class="breadcrumbs">
+=======
+ <div class="breadcrumbs">
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
     <div class="container">
       <div class="row">
         <ul>
@@ -69,6 +73,10 @@
               </div>
             </div>
             <ul id="products-list" class="products-list">
+<<<<<<< HEAD
+=======
+              @foreach($product as $pro)
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
               <li class="item odd">
                 <div class="col-item">
                   <div class="product_image">
@@ -77,6 +85,7 @@
                     </div>
                   </div>
                   <div class="product-shop">
+<<<<<<< HEAD
                     <h2 class="product-name"><a title=" Sample Product" href="product-detail.html"> Sample Product </a></h2>
                     <div class="price-box">
                       <p class="old-price"> <span class="price-label"></span> <span id="old-price-212" class="price"> $442.99 </span> </p>
@@ -369,6 +378,12 @@
                     <div class="price-box">
                       <p class="old-price"> <span class="price-label"></span> <span id="old-price-212" class="price"> $442.99 </span> </p>
                       <p class="special-price"> <span class="price-label"></span> <span id="product-price-212" class="price"> $222.99 </span> </p>
+=======
+                    <h2 class="product-name"><a title=" Sample Product" href="product-detail.html"> {{$pro->name}}</a></h2>
+                    <div class="price-box">
+                      <p class="old-price"> <span class="price-label"></span> <span id="old-price-212" class="price"> ${{$pro->old_price}} </span> </p>
+                      
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
                     </div>
                     <div class="ratings">
                       <div class="rating-box">
@@ -389,6 +404,11 @@
                   </div>
                 </div>
               </li>
+<<<<<<< HEAD
+=======
+              @endforeach
+             
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
             </ul>
           </div>
         </section>
@@ -399,6 +419,7 @@
             <!-- BEGIN BOX-CATEGORY -->
             <div class="box-content box-category">
               <ul>
+<<<<<<< HEAD
                 <li> <a class="active" href="#/women.html">Women</a> <span class="subDropdown minus"></span>
                   <ul class="level0_415" style="display:block">
                     <li> <a href="#/women/tops.html"> Tops </a> <span class="subDropdown plus"></span>
@@ -594,6 +615,13 @@
                 <!--level 0-->
                 <li class="last"> <a href="#/fashion.html">Fashion</a> </li>
                 <!--level 0-->
+=======
+               @foreach($cat as $ca)
+                <!--level 0-->
+                <li class="last"> <a href="#/fashion.html">{{$ca->name}}</a> </li>
+                <!--level 0-->
+                @endforeach
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
               </ul>
             </div>
             <!--box-content box-category--> 
@@ -781,5 +809,8 @@
       </div>
     </div>
   </section>
+<<<<<<< HEAD
   <!-- End Two columns content -->
+=======
+>>>>>>> 8c5861f7049bfc8d489585f3bcc79ecda81877c6
 @endsection
