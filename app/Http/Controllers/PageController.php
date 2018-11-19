@@ -115,6 +115,16 @@ class PageController extends Controller
             $bill_detail->save();
         }
         Session::forget('cart');
-        return redirec('index.html');
+        return redirect('index.html');
+    }
+    public function share(Request $req)
+    {
+        $product=Product::where('name','like','%'.$req->search.'%')->orwhere('old_price',$req->search)->get();
+        return view('users.share',compact('product'));
+    }
+    public function list($id)
+    {
+        $product=Product::where('type_id','=',$id)->get();
+        return view('users.list',compact('product'));
     }
 }

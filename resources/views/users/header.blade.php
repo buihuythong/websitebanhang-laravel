@@ -50,14 +50,14 @@
         <div class="col-lg-7 col-sm-4 col-md-6 col-xs-12"> 
           <!-- Search-col -->
           <div class="search-box">
-            <form action="http://htmldemo.magikcommerce.com/ecommerce/inspire-html-template/digital/cat" method="POST" id="search_mini_form" name="Categories">
+            <form action="{{ route('share') }}" method="get" id="search_mini_form" name="Categories">
               <select name="category_id" class="cate-dropdown hidden-xs">
                 <option value="0">All Categories</option>
                 @foreach($cat as $ca)
                 <option value="41">{{$ca->name}}</option>
                 @endforeach
               </select>
-              <input type="text" placeholder="Search here..." value="" maxlength="70" class="" name="search" id="search">
+              <input type="text" placeholder="Search here..." value="" name="search" maxlength="70" class="" name="search" id="search">
               <button id="submit-button" class="search-btn-bg"><span>Search</span></button>
             </form>
           </div>
@@ -194,7 +194,7 @@
               @foreach($type as $ty)
               <?php 
               if($ty->cat_id==$ca->id){ ?>
-              <li class="level1"><a href="http://htmldemo.magikcommerce.com/ecommerce/inspire-html-template/fashion/index.html"><span>
+              <li class="level1"><a href="{{route('list',$ty->id)}}"><span>
               <?php echo $ty->name; ?>
               </span></a> </li>
               <?php } ?>

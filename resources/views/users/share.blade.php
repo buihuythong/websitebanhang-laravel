@@ -1,19 +1,6 @@
 @extends('users.master')
 @section('content')
- <div class="breadcrumbs">
-    <div class="container">
-      <div class="row">
-        <ul>
-          <li class="home"> <a href="index.html" title="Go to Home Page">Home</a><span>&mdash;›</span></li>
-          <li class=""> <a href="grid.html" title="Go to Home Page">Women</a><span>&mdash;›</span></li>
-          <li class="category13"><strong>Tops &amp; Tees</strong></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- end breadcrumbs --> 
-  <!-- Two columns content -->
-  <section class="main-container col2-left-layout">
+ <section class="main-container col2-left-layout">
     <div class="main container">
       <div class="row">
         <section class="col-main col-sm-9 col-xs-12 col-sm-push-3 wow">
@@ -25,50 +12,12 @@
           </div>
           <div class="category-products">
             <div class="toolbar">
-              <div class="sorter">
-                <div class="view-mode"> <a href="grid.html" title="Grid" class="button button-grid">Grid</a>&nbsp; <span title="List" class="button button-active button-list">List</span>&nbsp; </div>
-              </div>
-              <div id="sort-by">
-                <label class="left">Sort By: </label>
-                <ul>
-                  <li><a href="#">Position<span class="right-arrow"></span></a>
-                    <ul>
-                      <li><a href="#">Name</a></li>
-                      <li><a href="#">Price</a></li>
-                      <li><a href="#">Position</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <a class="button-asc left" href="#?dir=desc&amp;order=position" title="Set Descending Direction"><span style="color:#999;font-size:11px;" class="glyphicon glyphicon-arrow-up"></span></a> </div>
               <div class="pager">
-                <div id="limiter">
-                  <label>View: </label>
-                  <ul>
-                    <li><a href="#">15<span class="right-arrow"></span></a>
-                      <ul>
-                        <li><a href="#">20</a></li>
-                        <li><a href="#">30</a></li>
-                        <li><a href="#">35</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div class="pages">
-                  <label>Page:</label>
-                  <ul class="pagination">
-                    <li><a href="#">&laquo;</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                  </ul>
-                </div>
+                
               </div>
             </div>
             <ul id="products-list" class="products-list">
-              @foreach($product as $pro)
+            	@foreach($product as $pro)
               <li class="item odd">
                 <div class="col-item">
                   <div class="product_image">
@@ -77,10 +26,10 @@
                     </div>
                   </div>
                   <div class="product-shop">
-                    <h2 class="product-name"><a title=" Sample Product" href="product-detail.html"> {{$pro->name}}</a></h2>
+                    <h2 class="product-name"><a title=" Sample Product" href="product-detail.html"> {{$pro->name}} </a></h2>
                     <div class="price-box">
-                      <p class="old-price"> <span class="price-label"></span> <span id="old-price-212" class="price"> ${{$pro->old_price}} </span> </p>
-                      
+                      <p class="old-price"> <span class="price-label"></span> <span id="old-price-212" class="price"> ${{$pro->new_price}} </span> </p>
+                      <p class="special-price"> <span class="price-label"></span> <span id="product-price-212" class="price">${{$pro->old_price}} </span> </p>
                     </div>
                     <div class="ratings">
                       <div class="rating-box">
@@ -102,7 +51,6 @@
                 </div>
               </li>
               @endforeach
-             
             </ul>
           </div>
         </section>
@@ -113,87 +61,15 @@
             <!-- BEGIN BOX-CATEGORY -->
             <div class="box-content box-category">
               <ul>
-               @foreach($cat as $ca)
-                <!--level 0-->
+                @foreach($cat as $ca)
                 <li class="last"> <a href="#/fashion.html">{{$ca->name}}</a> </li>
-                <!--level 0-->
                 @endforeach
+                <!--level 0-->
               </ul>
             </div>
             <!--box-content box-category--> 
           </div>
-          <div class="block block-layered-nav">
-            <div class="block-title"><span>Shop By</span></div>
-            <div class="block-content">
-              <p class="block-subtitle">Shopping Options</p>
-              <dl id="narrow-by-list">
-                <dt class="odd">Price</dt>
-                <dd class="odd">
-                  <ol>
-                    <li> <a href="#"><span class="price">$0.00</span> - <span class="price">$99.99</span></a> (6) </li>
-                    <li> <a href="#"><span class="price">$100.00</span> and above</a> (6) </li>
-                  </ol>
-                </dd>
-                <dt class="even">Manufacturer</dt>
-                <dd class="even">
-                  <ol>
-                    <li> <a href="#">TheBrand</a> (9) </li>
-                    <li> <a href="#">Company</a> (4) </li>
-                    <li> <a href="#">LogoFashion</a> (1) </li>
-                  </ol>
-                </dd>
-                <dt class="odd">Color</dt>
-                <dd class="odd">
-                  <ol>
-                    <li> <a href="#">Green</a> (1) </li>
-                    <li> <a href="#">White</a> (5) </li>
-                    <li> <a href="#">Black</a> (5) </li>
-                    <li> <a href="#">Gray</a> (4) </li>
-                    <li> <a href="#">Dark Gray</a> (3) </li>
-                    <li> <a href="#">Blue</a> (1) </li>
-                  </ol>
-                </dd>
-                <dt class="last even">Size</dt>
-                <dd class="last even">
-                  <ol>
-                    <li> <a href="#">S</a> (6) </li>
-                    <li> <a href="#">M</a> (6) </li>
-                    <li> <a href="#">L</a> (4) </li>
-                    <li> <a href="#">XL</a> (4) </li>
-                  </ol>
-                </dd>
-              </dl>
-            </div>
-          </div>
-          <div class="block block-cart">
-            <div class="block-title"><span>My Cart</span></div>
-            <div class="block-content">
-              <div class="summary">
-                <p class="amount">There are <a href="#">2 items</a> in your cart.</p>
-                <p class="subtotal"> <span class="label">Cart Subtotal:</span> <span class="price">$27.99</span> </p>
-              </div>
-              <div class="ajax-checkout">
-                <button type="submit" title="Submit" class="button button-checkout"><span>Checkout</span></button>
-              </div>
-              <p class="block-subtitle">Recently added item(s) </p>
-              <ul>
-                <li class="item"> <a class="product-image" title="Fisher-Price Bubble Mower" href="#"><img width="80" alt="Fisher-Price Bubble Mower" src="users/digital/products-images/p1.jpg"></a>
-                  <div class="product-details">
-                    <div class="access"> <a class="btn-remove1" title="Remove This Item" href="#"> <span class="icon"></span> Remove </a> </div>
-                    <p class="product-name"> <a href="#">Skater Dress In Leaf Print Grouped Product</a> </p>
-                    <strong>1</strong> x <span class="price">$19.99</span> </div>
-                </li>
-                <li class="item last"> <a class="product-image" title="Prince Lionheart Jumbo Toy Hammock" href="#"><img width="80" alt="Prince Lionheart Jumbo Toy Hammock" src="users/digital/products-images/p48.jpg"></a>
-                  <div class="product-details">
-                    <div class="access"> <a class="btn-remove1" title="Remove This Item" href="#"> <span class="icon"></span> Remove </a> </div>
-                    <p class="product-name"> <a href="#"> Sample Fashion Product Prince Lionheart </a> </p>
-                    <strong>1</strong> x <span class="price">$8.00</span> 
-                    <!--access clearfix--> 
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+          
           <div class="block block-subscribe">
             <div class="block-title"><span>Newsletter</span></div>
             <form action="#" method="post" id="newsletter-validate-detail">

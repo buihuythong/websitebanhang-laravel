@@ -146,7 +146,7 @@
                       <td colspan="1" class="a-left" style=""> Subtotal </td>
 
                       <td class="a-right" style=""><span class="price"><h1>${{ Session('cart')->totalPrice}}</h1></span></td>
-                       @endif
+                      @endif
                     </tr>
                   </tbody>
                 </table>

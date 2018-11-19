@@ -73,3 +73,7 @@ Route::get('shopping-cart','PageController@shopping')->name('shopping');
 Route::get('clear-cart','PageController@delall')->name('delall');
 
 Route::post('checkouta','PageController@checkouta')->name('checkouta');
+
+Route::get('share','PageController@share')->name('share');
+
+Route::get('list/{id}','PageController@list')->name('list');
