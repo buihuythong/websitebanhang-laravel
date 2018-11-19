@@ -116,7 +116,7 @@
 
 		function selectType(data){
 			$.ajax({
-				url : 'selectTypeByCate',
+				url : 'selectTypes',
 				type : 'GET',
 				dataType: 'html',
 				data : {t :  data},

@@ -24,12 +24,12 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="tieude">STT</td>
-					<td class="tieude">Tên thành viên</td>
-					<td class="tieude">Ảnh đại diện</td>
-					<td class="tieude">Quyền hạn</td>
-					<td class="tieude">Kích hoạt</td>
-					<td class="tieude">Công cụ</td>
+					<td class="tieude text-center">STT</td>
+					<td class="tieude text-center">Tên thành viên</td>
+					<td class="tieude text-center">Ảnh đại diện</td>
+					<td class="tieude text-center">Quyền hạn</td>
+					<td class="tieude text-center">Kích hoạt</td>
+					<td class="tieude text-center">Công cụ</td>
 				</tr>
 				
 					
@@ -51,12 +51,12 @@
 					}
 				 ?>
 				<tr>
-					<td>{!! $stt; !!}</td>
+					<td class="text-center">{!! $stt; !!}</td>
 					<td>{!! $v['name'] !!}</td>
-					<td><a href="{!! asset('')!!}<?php echo $v['avatar'] ?>"><img src="{!! asset('images/pic.gif')!!}" alt=""></td></a>
-					<td><small class="label label-success">{!! $flag !!}</small></td>
-					<td><small class="label label-success">{!! $flag1 !!}</small></td>
-					<td>
+					<td class="text-center"><a href="{!! asset('')!!}<?php echo $v['avatar'] ?>"><img src="{!! asset('images/pic.gif')!!}" alt=""></td></a>
+					<td class="text-center"><small class="label label-success">{!! $flag !!}</small></td>
+					<td class="text-center"><small class="label label-success">{!! $flag1 !!}</small></td>
+					<td class="text-center">
 						<a href="{!! route('deleteUser') !!}<?php echo '/'. $v['id'] ?>"><img src="{!! asset('images/delete.gif')!!}" alt="" style="margin-right: 10px;cursor: pointer" title="Xóa thành viên" onclick="return deleteUser();"></a>
 						<a href="{!! route('editUser') !!}<?php echo '/'. $v['id'] ?>"><img src="{!! asset('images/edit.gif')!!}" alt="" style="cursor: pointer" title="Sửa thành viên"></a>
 					</td>
