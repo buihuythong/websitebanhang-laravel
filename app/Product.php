@@ -49,4 +49,13 @@ class Product extends Model
         }
     }
 
+
+    public function getOneProduct($id)
+    {
+        $data = Product::find($id)->toArray();
+        return $data;
+    }
+
+    
+
 }

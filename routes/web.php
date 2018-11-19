@@ -97,10 +97,14 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 	Route::get('product/delete/{id?}','AdminController@deleteProduct')->name('deleteProduct');
 
 	Route::get('product/add.html','AdminController@getAddProduct')->name('getAddProduct');
-
 	Route::get('product/selectTypeByCate','AdminController@selectTypeByCate')->name('selectTypeByCate');
 
 	Route::post('product/add.html','AdminController@setAddProduct')->name('setAddProduct');
+
+	Route::get('product/getEdit/{id?}','AdminController@getEditProduct')->name('getEditProduct');
+
+	Route::get('product/selectByCate','AdminController@selectByCate')->name('selectByCate');
+
 
 });
 

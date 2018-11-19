@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 use App\Category;
 use App\Type;
 use App\Product;
@@ -13,6 +14,7 @@ use Session;
 use App\Bill;
 use App\billdetail;
 use App\customer;
+
 
 
 class PageController extends Controller

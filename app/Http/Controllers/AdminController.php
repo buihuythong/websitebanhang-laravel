@@ -390,13 +390,12 @@ class AdminController extends Controller
 
     public function selectTypeByCate(){
       $type = Type::where('cat_id',$_GET['t'])->get()->toArray();
+
      echo '<option value="">----Thương hiệu sản phẩm----</option>';
      foreach($type as $v){
        echo '<option value="'.$v['id'].'">'.$v['name'].'</option>';
      }
-    
-     
-    }
+   }
 
     public function setAddProduct(Request $request){
       $name = $request->name;
@@ -423,6 +422,16 @@ class AdminController extends Controller
       if($result == true){
         return redirect()->route('listProduct');
       }
+    }
+
+    public function getEditProduct($id){
+      $category = new Category;
+      $product = new Product;
+      $type = new Type;
+      $data = $product->getOneProduct($id);
+      $dataCate = $category->getAllCategory();
+      $dataType = $type->getAllType();
+      return view('admin/product/edit',compact('dataCate','data','dataType'));
     }
 
 }
